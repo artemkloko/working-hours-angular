@@ -1,0 +1,13 @@
+<section data-ng-controller="ModalEntryController as entryCtrl">
+  <div class="modal-header">
+    <h3 class="modal-title">Are you sure?</h3>
+  </div>
+  <form name="entryForm" class="form-horizontal" data-ng-submit="entryCtrl.remove()" novalidate>
+    <fieldset>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Yes, remove it</button>
+        <button type="button" class="btn btn-warning" data-ng-click="entryCtrl.modal.reject()">Cancel</button>
+      </div>
+    </fieldset>
+  </form>
+</section>

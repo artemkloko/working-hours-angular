@@ -1,0 +1,10 @@
+<div data-ng-controller="HomeController as homeCtrl" data-ng-init="homeCtrl.greet()">
+
+    <div class="row">
+        <div class="col-xs-3" uib-popover="{{homeCtrl.message.get()}}" popover-title="Ice King" popover-placement="right" popover-trigger="none" popover-is-open="homeCtrl.message.isOpen()">
+            <img src="static/img/ice-king.png" alt="Ice King" title="Ice King" style="width: 100%; cursor: pointer;" data-ng-click="homeCtrl.flavoredMessage.set('quote', 'quote')" />
+        </div>
+    </div>
+
+    <div class="well" data-ng-include="'static/partials/entries/list-entries.client.partial.html'"></div>
+</div>

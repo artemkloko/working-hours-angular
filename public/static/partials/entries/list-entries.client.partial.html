@@ -1,0 +1,49 @@
+<section data-ng-controller="EntriesController as entriesCtrl" data-ng-init="entriesCtrl.find()">
+    <table class="table vertical-align-middle">
+        <thead>
+            <tr>
+                <th class="text-center col-sm-3">
+                    <a href data-ng-click="entriesCtrl.order.set('_date')">Date
+                        <span data-ng-show="entriesCtrl.order.selected == '_date'">
+                            <span data-ng-show="entriesCtrl.order.reverse == false" class="glyphicon glyphicon-triangle-top"></span>
+                            <span data-ng-show="entriesCtrl.order.reverse == true" class="glyphicon glyphicon-triangle-bottom"></span>
+                        </span>
+                    </a>
+                </th>
+                <th class="text-center col-sm-2">From</th>
+                <th class="text-center col-sm-2">To</th>
+                <th class="text-center col-sm-2">
+                    <a href data-ng-click="entriesCtrl.order.set('_duration')">Duration
+                        <span data-ng-show="entriesCtrl.order.selected == '_duration'">
+                            <span data-ng-show="entriesCtrl.order.reverse == false" class="glyphicon glyphicon-triangle-top"></span>
+                            <span data-ng-show="entriesCtrl.order.reverse == true" class="glyphicon glyphicon-triangle-bottom"></span>
+                        </span>
+                    </a>
+                </th>
+                <th class="text-center col-sm-3">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr class="entry" data-ng-repeat="(e, entry) in entriesCtrl.entries | orderBy : entriesCtrl.order.by : entriesCtrl.order.reverse">
+                <td>{{entry.date}}</td>
+                <td>{{entry.from}}</td>
+                <td>{{entry.to}}</td>
+                <td><strong>{{entry.duration.hours}} {{entry.duration.minutes}}</strong></td>
+                <td>
+                    <a class="btn update" href data-ng-click="entriesCtrl.openModalUpdate(entry)">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                    <a class="btn remove" href data-ng-click="entriesCtrl.openModalRemove(entry)">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td><strong>Total</strong></td>
+                <td><strong>{{entriesCtrl.duration(entriesCtrl.entries).hours}} {{entriesCtrl.duration(entriesCtrl.entries).minutes}}</strong></td>
+                <td><button class="btn btn-primary" type="submit" data-ng-click="entriesCtrl.openModalCreate()">Add new entry</button></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
