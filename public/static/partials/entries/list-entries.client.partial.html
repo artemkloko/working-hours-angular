@@ -41,7 +41,7 @@
             <tr>
                 <td colspan="2"></td>
                 <td><strong>Total</strong></td>
-                <td><strong>{{entriesCtrl.duration.hours}} {{entriesCtrl.duration.minutes}}</strong></td>
+                <td><strong>{{entriesCtrl.duration(entriesCtrl.entries).hours}} {{entriesCtrl.duration(entriesCtrl.entries).minutes}}</strong></td>
                 <td><button class="btn btn-primary" type="submit" data-ng-click="entriesCtrl.openModalCreate()">Add new entry</button></td>
             </tr>
         </tbody>

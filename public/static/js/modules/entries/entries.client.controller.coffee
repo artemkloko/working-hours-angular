@@ -11,6 +11,7 @@ define [
         '$scope', 'Entries', 'sumEntriesDurations', 'modal', 'flavoredMessage'
         ($scope, Entries, sumEntriesDurations, modal, flavoredMessage) ->
             entriesCtrl = this
+            entriesCtrl.duration = sumEntriesDurations
 
             entriesCtrl.order =
                 selected: '_date'
@@ -28,7 +29,6 @@ define [
             entriesCtrl.find = ->
                 Entries.findAll().then (entries) ->
                     entriesCtrl.entries = entries
-                    entriesCtrl.duration = sumEntriesDurations(entries)
                     undefined
 
             entriesCtrl.openModalCreate = () ->

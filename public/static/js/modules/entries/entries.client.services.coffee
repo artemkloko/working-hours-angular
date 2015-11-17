@@ -51,6 +51,8 @@ define [
 
     moduleEntries.value 'sumEntriesDurations', (entries) ->
         durations = entries.map (entry) -> entry._duration
+        if durations.length is 0
+            return { hours: null, minutes: null }
         sum = durations.reduce (pv, cv) -> pv.add cv
         hours = sum.days() * 24 + sum.hours()
 
