@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>working hours angular</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
+
+    <style>
+        .well table {
+            margin-bottom: 0;
+        }
+        table.vertical-align-middle tbody>tr>td {
+            vertical-align: middle;
+        }
+        .vertical-align-middle {
+            vertical-align: middle;
+        }
+        .popover {
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">working hours angular</a>
+                </div>
+            </div>
+        </nav>
+
+        <div data-ng-include="'static/partials/core/home.client.partial.html'"></div>
+    </div>
+
+    <script src="lib/requirejs/require.js" data-main="static/js/main"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<section data-ng-controller="ModalEntryController as entryCtrl" data-ng-init="entryCtrl.findOne()">
+  <div class="modal-header">
+    <h3 class="modal-title">Update entry</h3>
+  </div>
+  <form name="entryForm" class="form-horizontal" data-ng-submit="entryCtrl.update()" novalidate>
+    <fieldset>
+      <div class="modal-body">
+
+        <div data-ng-include="'static/partials/entries/entry-fields.client.partial.html'"></div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-warning" data-ng-click="entryCtrl.modal.reject()">Cancel</button>
+      </div>
+    </fieldset>
+  </form>
+</section>
